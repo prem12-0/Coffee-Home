@@ -37,6 +37,72 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         margin-bottom: 1rem;
       }
+
+      /* ✅ CHECKMARK ANIMATION */
+      .checkmark-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+
+      .checkmark {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        stroke-width: 3;
+        stroke: #0a8a4a;
+        stroke-miterlimit: 10;
+        box-shadow: inset 0 0 0 #0a8a4a;
+        animation: fill 0.4s ease-in-out 0.4s forwards,
+          scale 0.3s ease-in-out 0.9s both;
+      }
+
+      .checkmark-circle {
+        stroke-dasharray: 166;
+        stroke-dashoffset: 166;
+        stroke-width: 3;
+        stroke-miterlimit: 10;
+        stroke: #0a8a4a;
+        fill: none;
+        animation: stroke-circle 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+      }
+
+      .checkmark-check {
+        transform-origin: 50% 50%;
+        stroke-dasharray: 48;
+        stroke-dashoffset: 48;
+        stroke-width: 3;
+        stroke: #0a8a4a;
+        fill: none;
+        animation: stroke-check 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.6s
+          forwards;
+      }
+
+      @keyframes stroke-circle {
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes stroke-check {
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes scale {
+        50% {
+          transform: scale3d(1.05, 1.05, 1);
+        }
+      }
+
+      @keyframes fill {
+        100% {
+          box-shadow: inset 0 0 0 30px #e4f8ee;
+        }
+      }
+
+      /* ✅ TICKET STYLES (same as before) */
       .ticket {
         border-radius: 14px;
         border: 2px dashed #e0d7c8;
@@ -151,10 +217,6 @@
         margin-bottom: 0.4rem;
         font-size: 1.4rem;
       }
-      h2 {
-        font-size: 1rem;
-        margin-bottom: 0.2rem;
-      }
       p {
         margin-bottom: 0.5rem;
         font-size: 0.9rem;
@@ -210,6 +272,18 @@
   <body>
     <div class="wrapper">
       <div class="box">
+        <!-- ✅ CHECKMARK SVG -->
+        <div class="checkmark-wrapper">
+          <svg
+            class="checkmark"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 52 52"
+          >
+            <circle class="checkmark-circle" cx="26" cy="26" r="25"></circle>
+            <path class="checkmark-check" d="M14 27l7 7 16-16"></path>
+          </svg>
+        </div>
+
         <h1>Table Reserved!</h1>
         <p>
           Hi <strong id="cust-name">Guest</strong>, your reservation has been
@@ -220,7 +294,9 @@
           <div class="ticket-header">
             <div>
               <div class="ticket-brand">Coffee Home</div>
-              <div class="ticket-sub">Hyderabad · South Indian Coffee & Chai</div>
+              <div class="ticket-sub">
+                Hyderabad · South Indian Coffee & Chai
+              </div>
               <div class="ticket-code" id="code-line">Code: —</div>
               <div class="badge-secure">
                 🔒 <span>Verified Reservation</span>
@@ -261,11 +337,11 @@
                 <div class="qr-fake"></div>
               </div>
               <div class="qr-text">
-                <strong>Table QR (Demo)</strong>
+                <strong>Table QR</strong>
                 <br />
                 Show this ticket at the counter.
                 <br />
-                This QR is for design only in this project 😊
+                This QR is unique, so don't share with others.
               </div>
             </div>
             <p class="ticket-note">
@@ -289,6 +365,7 @@
       </p>
     </div>
 
+
     <script>
       const params = new URLSearchParams(window.location.search);
 
@@ -298,7 +375,9 @@
       const guests = params.get("guests") || "-";
       const date = params.get("date") || "-";
       const time = params.get("time") || "-";
-      const code = params.get("code") || "CH-R" + Math.floor(100000 + Math.random() * 900000);
+      const code =
+        params.get("code") ||
+        "CH-R" + Math.floor(100000 + Math.random() * 900000);
 
       function formatDate(value) {
         if (!value || value === "-") return "-";
@@ -307,7 +386,7 @@
         return d.toLocaleDateString("en-IN", {
           day: "2-digit",
           month: "short",
-          year: "numeric"
+          year: "numeric",
         });
       }
 
@@ -342,9 +421,10 @@
           "A confirmation will be sent to " + phone + ".";
       }
 
-      document.getElementById("download-btn").addEventListener("click", () => {
-        window.print();
-      });
+      document
+        .getElementById("download-btn")
+        .addEventListener("click", () => window.print());
+
     </script>
   </body>
 </html>
