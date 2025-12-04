@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Home | Fresh Coffee & Treats</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav-container">
+        <div class="logo">Coffee <span>Home</span></div>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#hours">Hours</a></li>
+            <li><a href="#reservation" class="btn-nav">Reserve</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="hero" class="hero reveal">
+      <div class="overlay"></div>
+      <div class="container hero-content">
+        <h1>Fresh Coffee, Traditional Vibes</h1>
+        <p>
+          Coffee Home brings you the true taste of South Indian filter coffee —
+          brewed with love and served in traditional davara-tumbler style.
+        </p>
+        <div class="hero-buttons">
+          <a href="#menu" class="btn btn-primary">View Menu</a>
+          <a href="#reservation" class="btn btn-outline">Reserve Table</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section reveal">
+      <div class="container grid-2">
+        <div>
+          <h2>About Us</h2>
+          <p>
+            Welcome to Coffee Home — where every sip feels like a memory from
+            back home. We serve authentic South Indian filter coffee brewed the
+            traditional way, with freshly ground beans and frothy milk.
+          </p>
+          <br />
+          <p>
+            From crispy samosas to warm egg puffs and homemade treats — our menu
+            celebrates comforting flavors of South India.
+          </p>
+          <br />
+          <p>
+            Whether you're relaxing, studying, or catching up with friends —
+            Coffee Home is your happy place.
+          </p>
+          <br />
+          <p>Because here… <br />It’s not just coffee — it’s home. ❤️☕</p>
+        </div>
+
+        <div class="about-image-wrapper">
+          <img
+            src="https://i.pinimg.com/736x/19/48/ca/1948ca7889877e29e102b0e120546221.jpg"
+            alt="Coffee Home Cafe"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="section section-alt reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Menu</h2>
+          <p>Handpicked favorites — fresh every day.</p>
+        </div>
+
+        <div class="today-special">
+          ☕ Today’s Special: <strong>Filter Kaapi + Samosa</strong> combo – ₹ 55
+        </div>
+
+        <h3 class="menu-heading">Coffee & Beverages</h3>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <h4>Filter Kaapi</h4>
+              <span class="price">₹ 50</span>
+            </div>
+            <p class="menu-desc">Traditional South Indian filter coffee.</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <h4>Masala Chai</h4>
+              <span class="price">₹ 20</span>
+            </div>
+            <p class="menu-desc">Spiced chai with ginger and cardamom.</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <h4>Cold Coffee</h4>
+              <span class="price">₹ 40</span>
+            </div>
+            <p class="menu-desc">Iced coffee with milk and a hint of sweetness.</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <h4>Badam Milk</h4>
+              <span class="price">₹ 75</span>
+            </div>
+            <p class="menu-desc">Warm almond milk with saffron and nuts.</p>
+          </div>
+        </div>
+
+        <h3 class="menu-heading">Snacks</h3>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <h4>Samosa</h4>
+              <span class="price">₹ 10</span>
+            </div>
+            <p class="menu-desc">Crispy potato-filled samosa.</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <h4>Osmania Biscuits</h4>
+              <span class="price">₹ 15</span>
+            </div>
+            <p class="menu-desc">Hyderabadi-style chai biscuits.</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <h4>Egg Puff</h4>
+              <span class="price">₹ 25</span>
+            </div>
+            <p class="menu-desc">Bakery-style flaky egg puff.</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <h4>Aloo Bajji</h4>
+              <span class="price">₹ 20</span>
+            </div>
+            <p class="menu-desc">Hot and crispy potato fritters.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2>Gallery</h2>
+          <p>A quick glimpse of our space</p>
+        </div>
+        <div class="gallery-grid">
+          <img
+            src="https://as2.ftcdn.net/jpg/17/81/97/29/1000_F_1781972999_PsLoczrR9BdABuTrhSRJ1PqFbnxTLF58.jpg"
+            alt="Coffee shop view"
+          />
+          <img
+            src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg"
+            alt="Coffee cup"
+          />
+          <img
+            src="https://i.pinimg.com/1200x/33/81/35/338135e1fb1731452de0fa6cc887bf46.jpg"
+            alt="Cozy seating"
+          />
+          <img
+            src="https://i.pinimg.com/736x/6f/a3/70/6fa3704c63eb5d9e9d9d258647d41302.jpg"
+            alt="Coffee art"
+          />
+          <img
+            src="https://i.pinimg.com/1200x/5a/38/c1/5a38c1c078b1ab8af4ca2fc91d66bf2b.jpg"
+            alt="Cafe ambience"
+          />
+          <img
+            src="https://i.pinimg.com/1200x/94/f8/1d/94f81d047579093d88f998d57d28f249.jpg"
+            alt="Snacks display"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="section section-alt reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2>What Our Guests Say</h2>
+          <p>Some love notes from our regulars.</p>
+        </div>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>
+              “Best filter coffee I’ve had in years. Tastes exactly like home.”
+            </p>
+            <span class="review-name">– Anjali, Student</span>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★☆</div>
+            <p>
+              “Perfect spot for evening chai and snacks. Cozy and peaceful.”
+            </p>
+            <span class="review-name">– Ravi, Working Professional</span>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>
+              “We celebrate every small win here. Staff is super friendly.”
+            </p>
+            <span class="review-name">– Harsha & Friends</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hours" class="section section-alt reveal">
+      <div class="container">
+        <div class="section-header"><h2>Opening Hours</h2></div>
+        <div class="hours-wrapper">
+          <div class="hours-list">
+            <div class="hours-row">
+              <span>Mon - Thu</span><span>8AM - 9PM</span>
+            </div>
+            <div class="hours-row"><span>Fri</span><span>8AM - 10PM</span></div>
+            <div class="hours-row"><span>Sat</span><span>9AM - 10PM</span></div>
+            <div class="hours-row"><span>Sun</span><span>9AM - 8PM</span></div>
+          </div>
+        </div>
+        <p class="reach-text">
+          📍 Near your favourite neighbourhood in Hyderabad &nbsp;·&nbsp;
+          Closest landmark: SR Nagar Metro (example)
+        </p>
+      </div>
+    </section>
+
+    <section id="reservation" class="section reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2>Reserve a Table</h2>
+          <p>Book your cozy spot at Coffee Home in advance.</p>
+        </div>
+
+        <div class="reservation-tag">
+          Walk-ins welcome • Reservations recommended
+        </div>
+
+        <div class="reservation-layout">
+          <form class="reservation-form" action="order.html" method="get">
+            <div class="reservation-grid">
+              <div class="field-group">
+                <label for="name">Full Name</label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+
+              <div class="field-group">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+
+              <div class="field-group">
+                <label for="phone">Phone Number</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  placeholder="98765 43210"
+                  required
+                />
+              </div>
+
+              <div class="field-group">
+                <label for="guests">Guests 👥</label>
+                <select id="guests" name="guests" required>
+                  <option value="" disabled selected>Select guests</option>
+                  <option value="1">1 person</option>
+                  <option value="2">2 people</option>
+                  <option value="3">3 people</option>
+                  <option value="4">4 people</option>
+                  <option value="5">5 people</option>
+                  <option value="6">6 people</option>
+                  <option value="7">7 people</option>
+                  <option value="8">8+ people</option>
+                </select>
+              </div>
+
+              <div class="field-group">
+                <label for="date">Date 📅</label>
+                <input id="date" type="date" name="date" required />
+              </div>
+
+              <div class="field-group">
+                <label for="time">Time ⏰</label>
+                <input id="time" type="time" name="time" required />
+              </div>
+
+              <div class="field-group">
+                <label for="seating">Seating Preference</label>
+                <select id="seating" name="seating">
+                  <option value="" selected>No preference</option>
+                  <option value="indoor">Indoor</option>
+                  <option value="outdoor">Outdoor</option>
+                  <option value="window">Near window</option>
+                </select>
+              </div>
+
+              <div class="field-group">
+                <label for="occasion">Occasion</label>
+                <select id="occasion" name="occasion">
+                  <option value="" selected>Casual visit</option>
+                  <option value="birthday">Birthday</option>
+                  <option value="meeting">Meeting</option>
+                  <option value="date">Coffee date</option>
+                  <option value="celebration">Celebration</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="special">Special Requests</label>
+              <textarea
+                id="special"
+                name="special"
+                placeholder="Allergies, high chair, special setup, etc."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">
+              Reserve Now
+            </button>
+          </form>
+
+          <aside class="reservation-summary-box">
+            <h3 class="summary-title">Reservation Preview</h3>
+            <p class="summary-line">
+              Name: <span id="summary-name" class="summary-highlight">—</span>
+            </p>
+            <p class="summary-line">
+              Guests:
+              <span id="summary-guests" class="summary-highlight">—</span>
+            </p>
+            <p class="summary-line">
+              Date:
+              <span id="summary-date" class="summary-highlight">—</span>
+            </p>
+            <p class="summary-line">
+              Time:
+              <span id="summary-time" class="summary-highlight">—</span>
+            </p>
+            <p class="summary-line">
+              Seating:
+              <span id="summary-seating" class="summary-highlight">
+                No preference
+              </span>
+            </p>
+            <p class="summary-line">
+              Occasion:
+              <span id="summary-occasion" class="summary-highlight">
+                Casual visit
+              </span>
+            </p>
+            <p class="summary-note">
+              This is just a preview. You’ll see your table number after
+              confirming the reservation.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <p>&copy; 2025 Coffee Home. All Rights Reserved.</p>
+        <p class="footer-small">
+          Follow us on Instagram: <strong>@coffeehome_hyd</strong> (demo)
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

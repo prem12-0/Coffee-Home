@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Home | Reservation Details</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav-container">
+        <div class="logo">Coffee <span>Home</span></div>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#menu">Menu</a></li>
+            <li><a href="index.html#reservation">Reservation</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="section section-order reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2>Select Your Coffee</h2>
+          <p>Choose your favourite drinks and snacks for this visit.</p>
+        </div>
+
+        <p id="reservation-info" class="reservation-info"></p>
+
+        <form class="coffee-form">
+          <div class="coffee-grid">
+            <label class="coffee-card">
+              <div class="coffee-title-row">
+                <span class="coffee-name">Filter Kaapi</span>
+                <span class="coffee-price">₹ 50</span>
+              </div>
+              <p class="coffee-desc">Traditional South Indian filter coffee.</p>
+              <div class="coffee-controls">
+                <input type="checkbox" name="item-filter-kaapi" />
+                <input
+                  type="number"
+                  name="qty-filter-kaapi"
+                  min="1"
+                  max="10"
+                  value="1"
+                />
+              </div>
+            </label>
+
+            <label class="coffee-card">
+              <div class="coffee-title-row">
+                <span class="coffee-name">Masala Chai</span>
+                <span class="coffee-price">₹ 20</span>
+              </div>
+              <p class="coffee-desc">Spiced chai with ginger and cardamom.</p>
+              <div class="coffee-controls">
+                <input type="checkbox" name="item-masala-chai" />
+                <input
+                  type="number"
+                  name="qty-masala-chai"
+                  min="1"
+                  max="10"
+                  value="1"
+                />
+              </div>
+            </label>
+
+            <label class="coffee-card">
+              <div class="coffee-title-row">
+                <span class="coffee-name">Cold Coffee</span>
+                <span class="coffee-price">₹ 40</span>
+              </div>
+              <p class="coffee-desc">Chilled coffee with milk and ice.</p>
+              <div class="coffee-controls">
+                <input type="checkbox" name="item-cold-coffee" />
+                <input
+                  type="number"
+                  name="qty-cold-coffee"
+                  min="1"
+                  max="10"
+                  value="1"
+                />
+              </div>
+            </label>
+
+            <label class="coffee-card">
+              <div class="coffee-title-row">
+                <span class="coffee-name">Badam Milk</span>
+                <span class="coffee-price">₹ 75</span>
+              </div>
+              <p class="coffee-desc">Hot almond milk with saffron and nuts.</p>
+              <div class="coffee-controls">
+                <input type="checkbox" name="item-badam-milk" />
+                <input
+                  type="number"
+                  name="qty-badam-milk"
+                  min="1"
+                  max="10"
+                  value="1"
+                />
+              </div>
+            </label>
+
+            <label class="coffee-card">
+              <div class="coffee-title-row">
+                <span class="coffee-name">Samosa</span>
+                <span class="coffee-price">₹ 10</span>
+              </div>
+              <p class="coffee-desc">Crispy stuffed samosa, perfect with chai.</p>
+              <div class="coffee-controls">
+                <input type="checkbox" name="item-samosa" />
+                <input
+                  type="number"
+                  name="qty-samosa"
+                  min="1"
+                  max="10"
+                  value="1"
+                />
+              </div>
+            </label>
+
+            <label class="coffee-card">
+              <div class="coffee-title-row">
+                <span class="coffee-name">Egg Puff</span>
+                <span class="coffee-price">₹ 25</span>
+              </div>
+              <p class="coffee-desc">Bakery-style egg puff with flaky layers.</p>
+              <div class="coffee-controls">
+                <input type="checkbox" name="item-egg-puff" />
+                <input
+                  type="number"
+                  name="qty-egg-puff"
+                  min="1"
+                  max="10"
+                  value="1"
+                />
+              </div>
+            </label>
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-primary btn-full order-submit"
+            onclick="calculateBill()"
+          >
+            Order Now
+          </button>
+        </form>
+
+        <div id="bill-box" class="bill-box" style="display:none;">
+          <div class="bill-header">
+            <h3>Coffee Home</h3>
+            <p>Reservation & Bill Summary</p>
+            <div class="bill-meta">
+              <span id="order-number"></span>
+              <span id="bill-date"></span>
+            </div>
+          </div>
+
+          <ul id="bill-items" class="bill-items"></ul>
+
+          <div class="bill-total-row">
+            <span>Subtotal</span>
+            <span>₹ <span id="subtotal-amount">0</span></span>
+          </div>
+          <div class="bill-total-row">
+            <span>GST (5%)</span>
+            <span>₹ <span id="gst-amount">0</span></span>
+          </div>
+          <div class="bill-total-row bill-grand">
+            <span>Grand Total</span>
+            <span>₹ <span id="grand-total-amount">0</span></span>
+          </div>
+
+          <p class="bill-note">This bill is for your visit to Coffee Home.</p>
+
+          <button
+            type="button"
+            class="btn btn-primary btn-full pay-btn"
+            onclick="openPaymentModal()"
+          >
+            Confirm & Reserve Table
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-full download-btn"
+            onclick="downloadReceipt()"
+          >
+            Download PDF Receipt
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div id="payment-modal" class="payment-modal">
+      <div class="payment-box">
+        <h2>Table Reserved</h2>
+        <p id="payment-customer"></p>
+        <p id="payment-table"></p>
+        <p id="payment-amount"></p>
+
+        <div class="qr-wrapper">
+          <div class="qr-inner">
+            <div class="qr-fake"></div>
+          </div>
+          <p class="qr-text">UPI Payment Simulated</p>
+        </div>
+
+        <div class="paid-stamp">PAID</div>
+
+        <p class="redirect-text">
+          Your table is reserved at Coffee Home. Redirecting to Thank You page...
+        </p>
+
+        <button class="btn btn-primary" onclick="closePaymentModal()">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <audio id="success-sound" src="success.mp3" preload="auto"></audio>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <p>&copy; 2025 Coffee Home. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
